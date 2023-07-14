@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" verbose="0">
+  <listeners>
+    <listener class-name="vinayacademy.TestComponent.Listeners"/>
+  </listeners>
+  <test parallel="tests" name="Error Validation Test(failed)">
+    <classes>
+      <class name="vinayacademy.SubmitOrdertest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- vinayacademy.SubmitOrdertest -->
+      <class name="vinayacademy.ErrorValidationsTest">
+        <methods>
+          <include name="submitorder"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- vinayacademy.ErrorValidationsTest -->
+    </classes>
+  </test> <!-- Error Validation Test(failed) -->
+  <test parallel="tests" name="Submit Order Test(failed)">
+    <classes>
+      <class name="vinayacademy.SubmitOrdertest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="submitorder" invocation-numbers="0 1"/>
+          <include name="orderHistoryTest"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- vinayacademy.SubmitOrdertest -->
+      <class name="vinayacademy.ErrorValidationsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- vinayacademy.ErrorValidationsTest -->
+    </classes>
+  </test> <!-- Submit Order Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
